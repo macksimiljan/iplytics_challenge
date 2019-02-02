@@ -54,6 +54,9 @@ public class Project {
             delta += task.estimatedDays;
         }
         delta = (float) Math.ceil(delta);
+        // the work begins at the start date
+        // but it has to be positive, so:
+        delta = Math.max(0, delta - 1);
         endDate = startDate.plusDays((long) delta);
     }
 

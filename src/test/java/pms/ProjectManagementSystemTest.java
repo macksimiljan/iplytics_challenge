@@ -58,12 +58,12 @@ public class ProjectManagementSystemTest {
         pms.assignTaskToProject(dataTransformation, systemFix)
                 .assignTaskToProject(testCoverage, systemFix);
         assertEquals(2, systemFix.tasks.size());
-        assertEquals("2015-01-02", systemFix.endDate.toString());
+        assertEquals("2015-01-01", systemFix.endDate.toString());
 
         Task dataCleaning = pms.getTaskByName("Data Cleaning");
         pms.assignTaskToProject(dataCleaning, systemFix);
         assertEquals(3, systemFix.tasks.size());
-        assertEquals("2015-01-06", systemFix.endDate.toString());
+        assertEquals("2015-01-05", systemFix.endDate.toString());
     }
 
     @Test
@@ -114,7 +114,7 @@ public class ProjectManagementSystemTest {
 
         List<Project> projects = new ArrayList<>(List.of(systemFix, missionImpossible));
         int days = pms.maximumDaysToWorkFor(projects);
-        assertEquals(30, days);
+        assertEquals(28, days);
     }
 
 
