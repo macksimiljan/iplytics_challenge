@@ -42,7 +42,7 @@ public class Employee {
     @Override
     public String toString() {
         String supervisorLastName = (supervisor != null) ? supervisor.lastName : "";
-        return String.format("%s %s, supervisor: %s", firstName, lastName, supervisorLastName);
+        return String.format("%s %s, supervisor: %s, #projects: %d", firstName, lastName, supervisorLastName, projects.size());
     }
 
     public static List<Employee> importEmployees(String employeePath) throws IOException {

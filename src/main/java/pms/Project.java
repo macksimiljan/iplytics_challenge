@@ -62,7 +62,7 @@ public class Project {
 
     @Override
     public String toString() {
-        return String.format("%s, %s to %s, buffer: %d", name, startDate, endDate, buffer);
+        return String.format("%s, %s to %s, buffer: %d, #tasks: %d", name, startDate, endDate, buffer, tasks.size());
     }
 
     @Override

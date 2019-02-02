@@ -103,6 +103,20 @@ public class ProjectManagementSystemTest {
         assertEquals(0,parker.projects.size());
     }
 
+
+    @Test
+    public void viewingEmployeesOrTasksThrowsNoException() {
+        Project systemFix = pms.getProjectByName("System Fix");
+        Task dataTransformation = pms.getTaskByName("Data Transformation");
+        Task dataCleaning = pms.getTaskByName("Data Cleaning");
+        pms.assignTaskToProject(dataTransformation, systemFix)
+                .assignTaskToProject(dataCleaning, systemFix);
+
+        pms.viewAllEmployees();
+        pms.viewAllTasksFor(systemFix);
+        assert(true);
+    }
+
     @Test
     public void totalTimeForProjectsIsCalculatedCorrectly() {
         Project systemFix = pms.getProjectByName("System Fix");
